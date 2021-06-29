@@ -1,11 +1,10 @@
 
 const frutas = ["Manga", "UVA", "abacaxi", "banaNA", "MAçã"]
 
+let novoArr = []
+frutas.forEach( (x,i) => {
+  novoArr.push(`${i} - ${x}`)
 
-
-let novoArr = frutas.filter( (x,i) => {
-  
-  novoArr[i]= `${i} - ${x}`
 })
 
-console.log(novoArr)
+  console.log(novoArr)
