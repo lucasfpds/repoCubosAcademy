@@ -41,7 +41,6 @@ function addProdutoAoCarrinho(carrinho, produto){
     if (item.id == produto.id){
     item.qtd += produto.qtd
     } else {
-    console.log("caiu")
     console.log(carrinho.produtos)
     carrinho.produtos.push(produto)
     break
