@@ -1,0 +1,80 @@
+.imgPrincipal{
+    width: 100%;
+    height: 500px;
+    margin-bottom: 115px;
+}
+
+.section1{
+    display: flex;
+}
+
+.divDireita{
+    width: 635px;
+}
+
+.divEsquerda{
+    padding: 48px 125px 48px 0;
+}
+
+.section1 h2{
+    margin-bottom: 29px;
+}
+
+.section1 p{
+    margin-bottom: 53px;
+}
+.p2{
+    margin-top: 16px;
+}
+
+.section1 button{
+    margin-top: 32px;
+    padding: 17px 60px;
+    background-color: white;
+}
+
+.section1 img{
+    width: 635px;
+    height: 400px;
+    margin-bottom: 32px;    
+}
+
+.divDireita h3{
+    margin-bottom: 28px;
+}
+
+.divDireita p{
+    margin-bottom: 40px;
+}
+
+.section2{
+    display: flex;
+    justify-content: space-between;
+    margin: 64px  0 115px 0;
+    padding: 32px 0;
+    border: 2px solid;
+    border-style: groove none;
+}
+
+.section2 button{
+    all: unset;
+    display: flex;
+    align-items: center;
+    background-color: white;
+}
+
+.btnEsquerda{
+    margin-left: 32px;
+}
+
+.btnDireita{
+    margin-right: 32px;
+}
+
+.section2 p{
+    opacity: 0.5;    
+}
+
+.section2 h3{
+    line-height: 36px;
+}
