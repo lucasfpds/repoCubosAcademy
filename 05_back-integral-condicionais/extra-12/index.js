@@ -1,1 +1,0 @@
-const diaDaSemana = 3;
