@@ -1,0 +1,150 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body>div{
+    padding: 64px 164px 0 164px;
+}
+
+a{
+    text-decoration: none;
+    text-transform: uppercase;
+    font-family:"Public Sans";
+    font-style: normal;
+    font-weight: 100;
+    font-size: 12px;
+    line-height: 14px;
+    text-align: center;
+    letter-spacing: 2px;
+    text-transform: uppercase;        
+    color: #FFFFFF;
+}
+
+h1{
+    font-family: "Ibarra Real Nova";
+    font-style: normal;
+    font-weight: bold;
+    font-size: 50px;
+    line-height: 50px;
+    letter-spacing: -0.446429px;
+    color: #33323D;
+}
+
+h2{
+    font-family: "Ibarra Real Nova";
+    font-style: normal;
+    font-weight: bold;
+    font-size: 40px;
+    line-height: 42px;    
+    letter-spacing: -0.357143px;
+    color: #33323D;
+    }
+
+    h3{
+        font-family: "Ibarra Real Nova";
+        font-style: normal;
+        font-weight: normal;
+        font-size: 32px;
+        line-height: 42px;
+        letter-spacing: -0.285714px;
+        color: #33323D;
+    }
+
+    p{
+        font-family: "Public Sans";
+        font-style: normal;
+        font-weight: normal;
+        font-size: 16px;
+        line-height: 30px;
+        color: #33323D;
+        mix-blend-mode: normal;
+        opacity: 0.8;
+    }
+
+    header{
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between ;
+        margin-bottom: 54px;
+    }
+    
+    header ul{
+        list-style: none;
+        display: flex;
+        flex-direction: row;
+    }
+    
+    header li{
+        margin-right: 42px;
+    }
+    
+    header a{
+        font-weight: normal;
+        letter-spacing: 2px;
+        color: #33323D;
+    }
+
+    footer{
+        background-color: #33323D;
+        padding: 24px 165px;
+        display: flex;
+        justify-content: space-between;
+    }
+
+    footer  div {
+        display: flex;
+        align-items: center;
+    }
+
+    footer div img{
+        margin-right: 48px;
+    }
+    footer ul {
+        list-style: none;
+        display: flex;
+    }
+    footer div li {
+        margin-left: 42px;
+    }
+
+    footer>ul li{
+        margin-left: 16px;
+    }
+    
+    .sectionFinal {
+        display: flex;
+        justify-content: space-between;
+        margin-bottom: 150px;
+    }
+
+    .sectionFinal>h2{
+        width: 367px;
+    }
+
+    .sectionFinal button{
+        height: 48px;
+        padding: 17px 50px;
+        background-color: white;
+    }
+
+    .sectionFinal a{
+        color: #33323D;
+    }
+    .sectionFinal button:hover, .sectionFinal a:hover{
+        background-color: #33323D;
+        color: #fafafa;
+    }
+
+    
+.p2{
+    font-style: normal;
+    font-weight: bold;
+    font-size: 16px;
+    line-height: 30px;
+    mix-blend-mode: unset;
+    opacity: 1;
+    color: #5FB4A2;
+    margin-bottom: 16px;
+}

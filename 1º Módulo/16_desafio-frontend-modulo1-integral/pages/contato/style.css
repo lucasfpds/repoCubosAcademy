@@ -1,0 +1,75 @@
+.section1, .section2{
+    display: flex;
+    justify-content: space-between;
+    padding: 48px 0;
+    border: 2px solid #f0f0f1;
+    border-style: groove none;
+    margin-bottom: 47px;
+}
+
+.section2{
+    border: none;
+    padding: 0;
+}
+.section1 div, .section2 div{
+    width: 635px;
+}
+
+.section1 p{
+    margin-bottom: 54px;
+}
+
+.section1 ul{
+    display: flex;
+    list-style: none;
+}
+
+.section1 li{
+    margin-right: 15px;
+}
+
+label{
+    font-family: "Public Sans";
+    font-style: normal;
+    font-weight: bold;
+    font-size: 13px;
+    line-height: 30px;
+    color: #33323D;
+    mix-blend-mode: normal;
+    opacity: 0.8;
+    margin-bottom: 8px;
+}
+
+input{
+    height: 48px;
+    width: 100%;
+    background: #ebebee;
+    mix-blend-mode: normal;
+    margin-bottom: 24px;
+    border: none;
+}
+
+input:focus{
+    border: 2px solid #000000;
+    mix-blend-mode: normal;    
+}
+
+.input3{
+    height: 96px;
+}
+
+.section2 div button{
+    width: 200px;
+    padding: 17px 24px;
+    background: #203A4C;
+    border: none;
+}
+
+.section2 div button:hover{
+    background: #5FB4A2;
+    border: none;
+}
+
+footer{
+    margin-top: 109px;
+}

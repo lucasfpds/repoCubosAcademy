@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercício</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel = "preconnect" href = "https://fonts.googleapis.com">
+    <link rel = "preconnect" href = "https://fonts.gstatic.com" crossorigin>
+    <link href = "https: //fonts.googleapis.com/css2? family = Karla & display = swap "rel =" stylesheet ">
+    <style>
+        
+
+        *{
+            box-sizing: border-box;
+            font-family: 'Karla', sans-serif;
+            
+        }
+
+        body{
+            height: 100vh;
+            background: #E6EFF5;
+            display: flex;
+            justify-content: center;
+            align-items: center;/*
+            width: 1440px;
+            height: 800px;
+            background-color: orange;*/
+        }
+
+        .container{
+            max-width: 635px;
+            outline: 2px solid black;
+            height: 475px;            
+            display: flex;
+            flex-direction: column;
+        }
+        header, main div{
+            padding-left: 20px;
+        }
+        header{
+            flex-grow: 1;
+            outline: 2px solid black;
+        }
+
+        header h1{
+            font-weight: bold;
+            font-size: 24px;
+            line-height: 28px;
+            /* identical to box height */
+            letter-spacing: -0.3px;
+            color: #2AB3B1;
+        }
+        header h2{
+            font-weight: bold;
+            font-size: 18px;
+            line-height: 21px;
+            /* identical to box height */
+
+            letter-spacing: -0.225px;
+
+            color: #C0DF33;
+        }
+        p{
+            font-size: 16px;
+            line-height: 26px;
+            /* or 162% */
+
+            letter-spacing: -0.2px;
+
+            color: #9AA7BE;
+        }
+
+        main{
+            flex-grow: 1;
+            color: white;
+            background: #2AB3B1;
+            display: flex;
+        }
+        div{            
+            outline: 2px solid black;
+            width: 10%;
+            flex-grow: 1;
+        }
+        span{
+            font-weight: bold;
+            font-size: 32px;
+            line-height: 37px;
+            letter-spacing: -0.4px;
+            display: inline;
+        }
+
+        .paragrafoInline{
+            display: inline;
+            margin-left: 10px;
+        }
+
+        main p{
+            color: white;
+        }
+        a{
+            font-weight: bold;
+            font-size: 16px;
+            line-height: 19px;
+            /* identical to box height */
+
+            letter-spacing: -0.2px;
+
+            color: #FFFFFF;
+            padding: 15px 89px;
+            background: #C0DF33;
+        }
+
+        
+
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <header>
+            <h1>
+                Join our community
+            </h1>
+            <h2>
+                30-day, hassle-free money back guarantee
+            </h2>
+            <p>
+                Gain access to our full library of tutorials along with expert code reviews. Perfect for any developers who are serious about honing their skills.
+            </p>
+        </header>
+        <main>
+
+            <div>
+                <h2>                    
+                    Monthly Subscription
+                </h2>
+                <span>$29</span>
+                <p class="paragrafoInline">per month</p>
+                <p>Full access for less than $1 a day</p>
+                <a href="#">Sign Up</a>
+            </div>
+
+            <div>
+                <h1>Why Us</h1>
+                <p>
+                    Tutorials by industry experts Peer & expert code review Coding exercises Access to our GitHub repos Community forum Flashcard decks New videos every week
+                </p>
+            </div>
+
+        </main>
+    </div>
+    
+
+
+</body>
+</html>
+
+
+
+

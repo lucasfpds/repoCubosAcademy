@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercício</title>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Mulish:wght@400;700&family=Rokkitt:wght@400;700&display=swap" rel="stylesheet">
+
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Mulish', sans-serif;
+            font-style: normal;
+        }
+
+        body{
+            background: #E5E5E5;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        .container{
+            padding: 64px 90px 56px 89px;
+            width: 610px;
+            background: #FFFFFF;
+            box-shadow: 0px 10px 24px rgba(0, 0, 0, 0.15);
+            border-radius: 15px;
+            display: flex;
+            flex-direction: column;
+        }
+
+        h1{            
+            font-family: "Rokkitt", serif;
+            font-style: normal;
+            font-weight: bold;
+            font-size: 36px;
+            line-height: 41px;
+            color: #161843;
+            margin-bottom: 15px;
+        }
+
+        p{
+            font-weight: normal;
+            font-size: 16px;
+            line-height: 23px;
+            color: #161843;
+            width: 339px;
+            margin-bottom: 52px;
+        }
+        input{
+            all: unset;
+            font-family: 'Mulish', sans-serif;
+            font-style: normal;
+            width: 100%;
+            padding: 25px;
+            border: 1px solid #CAD6E4;
+            box-sizing: border-box;
+            border-radius: 5px;
+            margin-bottom: 16px;
+        }
+        input::placeholder{
+            font-weight: normal;
+            font-size: 18px;
+            line-height: 23px;
+            color: #717A91;
+        }
+
+        .container>div{
+            display: flex;
+            align-items: center;
+            margin-bottom: 55px;
+            justify-content: space-between;
+        }
+
+        .btnNext{
+            width: 157px;
+            height: 73px;
+            background: #046586;
+            border-radius: 5px;
+            color: white;
+        }
+
+        button{
+            font-size: 16px;
+            line-height: 20px;
+            color: #0C6787;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 25px 35px;
+        }
+        a{
+            text-decoration: none;
+            font-weight: normal;
+            font-size: 16px;
+            line-height: 20px;
+            color: #0C6787;
+        }
+        hr{
+            color: #CAD6E4;
+            margin-bottom: 35px;
+        }
+        .btnsInferior button{
+            margin: 30px 0 60px 0;
+            font-weight: normal;
+            font-size: 16px;
+            line-height: 20px;
+            padding: 10px 45px;
+            color: #000000;
+            margin-right: 16px;
+            width: 100%;
+        }
+
+        span{
+            font-size: 14px;
+            line-height: 18px;
+            color: #838A9E;
+            text-align: center;
+        }
+
+        div img{
+            width: 32px;
+            height: 32px;
+        }
+
+        .signUp, .signUp a{            
+            font-size: 14px;
+            line-height: 18px;
+        }
+        .signUp a{
+            text-decoration: underline
+        };
+    </style>
+</head>
+<body>
+
+
+    <div class="container">
+
+        <h1>
+            Log In
+        </h1>
+
+        <p>
+            Log in to your account to upload or download pictures, videos or music.
+        </p>
+
+        <input type="text" placeholder="Enter your email address">
+
+        <div>
+            <a href="#">Forgot password?</a>
+            <button class="btnNext">
+                Next <img src="./assets/seta.svg" alt="seta direita">
+            </button>
+        </div>
+        <hr>
+        <span>
+            Or log in with
+        </span>
+
+        <div class="btnsInferior">
+            <button>
+                <img src="./assets/facebook.svg" alt="logo facebook"> Facebook
+            </button>
+            <button style="margin-right:0">
+               <img src="./assets/google.svg" alt="logo google"> Google
+            </button>   
+        </div>
+
+        <span class="signUp">
+            Don’t have an account yet? <a href="#">Sign up</a>
+        </span>
+
+    </div>
+
+</body>
+</html>
+
+
+
+

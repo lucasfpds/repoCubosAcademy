@@ -1,0 +1,19 @@
+/*
+Autor: Lucas Fernandes 
+https://github.com/lucasfpds
+
+*/
+
+body{
+    background: Burlywood;
+    padding: 50px;
+
+}
+
+img{
+    border-radius: 10px;;
+}
+
+p, ul{
+    margin-bottom: 100px;
+}
