@@ -6,7 +6,6 @@ const botaoConfirmar = document.querySelector('.confirmar')
 btn.addEventListener('click',inscrever);
 
 function inscrever (event){
-    console.log(btn.textContent)
     btn.textContent = 'INSCRITO'
     btn.classList.add('inscrito')
 
@@ -17,12 +16,10 @@ function inscrever (event){
     })
 
     botaoCancelar.addEventListener('click', function(event){
-        console.log('clicou em não')
         modal.classList.add('escondido')
     })
 
     botaoConfirmar.addEventListener('click', function(event){
-        console.log('clicou em sim')
         modal.classList.add('escondido')
         btn.textContent = 'INSCREVER-SE'
         btn.classList.remove('inscrito')
