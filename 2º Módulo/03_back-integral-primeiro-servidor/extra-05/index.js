@@ -1,4 +1,3 @@
-
 const jogadores = ["José", "Maria", "João", "Marcos", "Fernanda"];
 
 const express = require('express');
@@ -34,8 +33,6 @@ app.get('/adicionar', (req, res) =>{
     const queryNome = req.query.nome;
     const nome = queryNome[0].toUpperCase() + queryNome.substr(1)
 
-    //res.send(jogadores)
-
  if(req.query.indice == undefined){
      
     jogadores.push(nome)
@@ -45,13 +42,7 @@ app.get('/adicionar', (req, res) =>{
         res.send('O índice informado ('+index+') não existe no array. Novo jogador não adicionado.')
 
     } else {
-
-        for(let i = jogadores.length; i >= index; i--){
-        
-          jogadores[i] = jogadores[i-1]
-        
-          i == index ? jogadores[i] = nome : null;
-        }
+      jogadores.splice(index,0,nome)
     }
 
     res.send(jogadores)
