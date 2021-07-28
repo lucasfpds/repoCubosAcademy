@@ -1,0 +1,79 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Roboto";
+    font-style: normal;
+    font-weight: bold;
+}
+
+
+
+body{
+    height: 100vh;
+    background-color: #EFDADA;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+}
+
+div{
+    background-color: white;
+    padding: 40px 60px;
+    display: flex;
+    flex-direction: column;
+    width: 470px;
+    height: 459px;
+    align-items: center;
+}
+
+h1{
+    margin-bottom: 74px;
+    font-size: 30px;
+    line-height: 35px;
+    text-align: center;
+}
+
+label{
+    margin-bottom: 12px;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 16px;
+    align-self: flex-start;
+}
+
+input{
+    margin-bottom: 20px;
+    width: 100%;
+    border: 1px solid #4E4E4E;
+    height: 46px;
+    border-radius: 8px;
+}
+
+.btnEntrar{
+    all: unset;
+    text-align: center;
+    margin-top: 62px;
+    width: 111px;
+    height: 42px;
+    color: white;
+    background-color: #13A1F0;
+    border-radius: 8px;
+    font-size: 14px;
+    line-height: 16px;
+}
+
+img{
+    position: absolute;
+}
+
+.btnVerSenha{
+    position: absolute;
+    top: 54.7%;
+    right: 42.5%
+}
+
+.esconder{
+    display: none;
+}
