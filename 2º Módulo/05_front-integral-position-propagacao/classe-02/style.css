@@ -7,7 +7,7 @@
     font-weight: bold;
 }
 body{
-    height: 100vh;
+    height: 1024px;
     background-color: #E6E3CA;
     padding: 85px;
     display: flex;

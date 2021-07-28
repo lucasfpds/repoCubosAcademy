@@ -69,9 +69,9 @@ img{
 }
 
 .btnVerSenha{
-    position: absolute;
-    top: 54.7%;
-    right: 42.5%
+    position: relative;
+    bottom: 12.5%;
+    left: 42%
 }
 
 .esconder{

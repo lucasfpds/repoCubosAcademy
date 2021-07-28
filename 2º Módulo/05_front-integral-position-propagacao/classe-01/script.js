@@ -6,11 +6,18 @@ const input = document.querySelector('#input2')
 let senha = ""
 let novoInputValue = ""
 
+const teclas = ['Backspace', 'Enter','Shift','Delete']
 
-input.addEventListener('keydown', function (event){
-    novoInputValue += "*"    
-    input.value = novoInputValue
-    senha += event.key
+input.addEventListener('keyup', function (event){
+    if(!teclas.some(a => a === event.key)){
+        novoInputValue += "*"    
+        input.value = novoInputValue
+        senha += event.key
+    } else {
+        senha = ""
+        input.value = senha
+        novoInputValue = ""
+    }
 })
 
 
