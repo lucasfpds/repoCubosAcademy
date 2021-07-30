@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Exercicio</title>
+    <script src="script.js" defer></script>
+
+    <style>
+        body{
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+        }
+
+        div, form {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+          }
+
+        .esconder{
+          display: none;
+        }
+
+
+    </style>
+  </head>
+
+  <body>
+    <h1>
+        Login
+    </h1>
+    <form action="https://www.google.com/search" target="_blank" method="GET">
+      
+      <div>
+        
+        <br>
+          <label for="generoMusical">Genêro músical</label>
+          <select  id="generoMusical" required>
+            <option value="Rock">Rock</option>
+            <option value="Pop">Pop</option>
+            <option value="MPB">MPB</option>
+          </select>
+      </div>
+
+      <div class="esconder">
+        <label for="musica">Música </label>
+        <input type="text" id="musica" class="esconder" name="q">
+      </div>
+
+      <button type="submit">Pesquisar</button>
+    </form>
+
+  </body>
+
+</html>

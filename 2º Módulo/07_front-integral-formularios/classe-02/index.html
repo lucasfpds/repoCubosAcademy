@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Exercicio</title>
+    <script src="script.js" defer></script>
+
+    <style>
+        body{
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+        }
+    </style>
+  </head>
+
+  <body>
+    <h1>
+        Login
+    </h1>
+
+    <form >
+      <div>
+          <label for="nome ">Nome</label>
+          <input id="nome" type="text" required>
+      </div>
+      <div>
+          <label for="email">E-mail</label>
+          <input id="email" type="email" required>
+      </div>
+      <div>
+          <label for="celular">Celular</label>
+          <input id="celular" type="number" required>
+      </div>
+      <div>
+          <label for="senha">Senha</label>
+          <input id="senha" type="password" required>
+      </div>
+  
+      <div>
+        Qual o seu Estado
+        <br>
+          <label for="estado">Estado</label>
+          <select  id="estado">
+            <option value="Acre">Acre</option>
+            <option value="Alagoas">Alagoas</option>
+            <option value="Amapá">Amapá</option>
+            <option value="Amazonas">Amazonas</option>
+            <option value="Bahia">Bahia</option>
+            <option value="Ceará">Ceará</option>
+            <option value="Espírito Santo">Espírito Santo</option>
+          </select>
+      </div>
+  
+      <button type="submit">Enviar</button>
+    
+    </form>
+
+  </body>
+
+</html>
