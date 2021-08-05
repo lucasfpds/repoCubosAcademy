@@ -1,0 +1,143 @@
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Roboto', sans-serif;
+    font-style: normal;
+    font-weight: bold;
+}
+
+body{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+h1{
+    font-weight: bold;
+    font-size: 36px;
+    margin-top  : 152px;
+    margin-bottom: 52px;
+}
+p{
+    font-weight: normal;
+    font-size: 20px;
+    line-height: 23px;
+}
+span{
+    font-weight: normal;
+    font-size: 20px;
+    line-height: 23px;
+    color: #5C5C5C;
+}
+
+.container>div{
+    display: flex;            
+    justify-content: center;
+}
+
+.imagem{
+    margin-right: 30px;
+}
+
+.imagem img{
+    width: 250px;
+}
+
+.imagem>div{
+    display: flex;
+    justify-content: space-between;
+} 
+.ultima{
+    margin-right: 0;
+}
+
+.lateral{
+    position: fixed;
+    height: 1024px;
+    width: 64px;
+    top: 0px;
+    left: 1px;
+    background: #313131;
+    padding-left: 20px;
+}
+
+.lista{
+    padding-top: 20px;
+    text-align: center;
+    list-style: none;
+}
+
+li{
+    margin-bottom: 40px;
+}
+
+button{
+    all: unset;
+    display: flex;
+    align-items: center;
+}
+
+.aberto{
+    width: 199px;
+}
+.ulAberta{
+    list-style: none;
+    text-align: start;
+}
+
+ul p, ul span{
+    display: inline;
+    font-weight: bold;
+    font-size: 16px;
+    line-height: 19px;
+    color: #FFFFFF;
+    margin-left: 27px;
+}
+
+ul span{
+    color: #888888;
+}
+
+.escondido{
+    display: none;
+}
+
+.modal{
+    padding-left: 130px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 2;
+
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+
+    background: rgba(0, 0, 0, 0.3);
+    display: none;
+}
+
+.modal>a>img{
+    width: 500px;
+}
+
+.buttonClose>img{
+    position: relative;
+    bottom: 250px;
+    left: 330px;
+}
+
+.buttonNext>img{
+    position: relative;
+    top: 0px;
+    right: 0px;
+}
+
+.buttonPrev>img{
+    position: relative;
+    right: 675px;
+}
