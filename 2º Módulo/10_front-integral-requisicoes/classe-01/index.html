@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Aula</title>
+    <script src="script.js" defer></script>
+    <style>
+        body{
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+        }
+
+        input{
+            display: block;
+        }
+
+        h1{
+            color: red;
+        }
+
+        .escondido{
+            display: none;
+        }
+
+    </style>
+    
+</head>
+
+<body>
+    
+    <form action="">
+        <label for="nome">Nome</label>
+        <input type="text" id="nome">
+        
+        <label for="email">Email</label>
+        <input type="email" id="email">
+        
+        <label for="cep">CEP</label>
+        <input type="number" id="cep">
+        
+        <label for="cidade">Cidade</label>
+        <input type="text" id="cidade">
+        
+        <label for="rua">Rua</label>
+        <input type="text" id="rua">
+        
+        <label for="numero">Número</label>
+        <input type="number" id="numero">
+        
+    </form>
+
+    <h1 class="escondido"></h1>
+
+</body>
+
+</html>
