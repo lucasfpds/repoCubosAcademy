@@ -24,7 +24,7 @@ const imgModal = document.querySelector(".modal__img");
 const descricaoModal = document.querySelector(".modal__description");
 const notaModal = document.querySelector(".modal__average");
 const generosModal = document.querySelector(".modal__genres");
-const trailerModal = document.querySelector(".modal>a");
+const trailerModal = document.querySelector(".modal a");
 const fecharModal = document.querySelector(".modal__close");
 
 fetch(

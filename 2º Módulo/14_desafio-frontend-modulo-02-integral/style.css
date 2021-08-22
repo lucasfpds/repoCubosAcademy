@@ -222,8 +222,9 @@ input{
 
 .modal a{
     padding-top: 2px;
-    position: fixed;
-    top: 43%;
+    position: absolute;
+    bottom: 53%;
+    left: 48.5%;
 }
 
 .modal__genre-average{
