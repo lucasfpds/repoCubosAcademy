@@ -271,17 +271,65 @@ fetch(
   const promisseResponse = response.json();
 
   promisseResponse.then(function (response) {
+    //TRATAMENTO DA DATA
+    const data = response.release_date;
+    const arr = data.split("-");
+    let mes = arr[1];
+
+    switch (mes) {
+      case "01":
+        mes = "Janeiro";
+        break;
+      case "02":
+        mes = "Fevereiro";
+        break;
+      case "03":
+        mes = "Março";
+        break;
+      case "04":
+        mes = "Abril";
+        break;
+      case "05":
+        mes = "Maio";
+        break;
+      case "06":
+        mes = "Junho";
+        break;
+      case "07":
+        mes = "Julho";
+        break;
+      case "08":
+        mes = "Agosto";
+        break;
+      case "09":
+        mes = "Setembro";
+        break;
+      case "10":
+        mes = "Outubro";
+        break;
+      case "11":
+        mes = "Novembro";
+        break;
+      case "12":
+        mes = "Dezembro";
+        break;
+    }
+
+    arr[1] = mes;
+    
+    const novaData = arr.reverse().join().replaceAll(",", " de ");
+
+    //TRATAMENTO DOS DADOS RESTANTES
     tituloHighlight.textContent = response.title;
     notaHighlight.textContent = response.vote_average;
-    dataHighlight.textContent = response.release_date;
+    dataHighlight.textContent = novaData;
     descricaoHighlight.textContent = response.overview;
     divHighLight.style.background = `no-repeat center/110% url(${response.backdrop_path})`;
-    console.log(response.backdrop_path)
 
-    arr = response.genres;
+    arrayGeneros = response.genres;
 
-    arr.forEach((element, index) => {
-      arr.length - 1 !== index
+    arrayGeneros.forEach((element, index) => {
+      arrayGeneros.length - 1 !== index
         ? (generosHighlight.textContent += `${element.name}, `)
         : (generosHighlight.textContent += `${element.name} / `);
     });
