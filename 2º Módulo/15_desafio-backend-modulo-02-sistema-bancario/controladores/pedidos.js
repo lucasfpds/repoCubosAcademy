@@ -82,71 +82,77 @@ const alterarConta = async (req, res) => {
       }
     }
 
-    if (!objVazio) {
-      null;
-    } else {
+    if (objVazio) {
       res.status("400");
       res.json({
         mensagem: "Não foi passado ao menos um campo no body da requisição",
       });
-    }
-
-    if (Number(numConta) >= 1 && Number(numConta) <= dados.contas.length) {
-      null;
     } else {
-      res.status("400");
-      res.json({
-        mensagem: "O numero da conta passado como parametro na URL é inválida",
+      if (!(Number(numConta) >= 1 && Number(numConta) <= dados.contas.length)) {
+        res.status("400");
+        res.json({
+          mensagem:
+            "O numero da conta passado como parametro na URL é inválida",
+        });
+      } else {
+        let cpfIncorreto = false;
+        for (let i of dados.contas) {
+          if (i.usuario.cpf == dadosBody.cpf && i.numero != numConta) {
+            cpfIncorreto = true;
+          }
+        }
+        if (cpfIncorreto) {
+          res.status("401");
+          res.send({
+            mensagem:
+              "O CPF for informado já existe outro registro com o mesmo CPF",
+          });
+        } else {
+          let emailIncorreto = false;
+          for (let i of dados.contas) {
+            if (i.usuario.email == dadosBody.email && i.numero != numConta) {
+              emailIncorreto = true;
+            }
+          }
+
+          if (emailIncorreto) {
+            res.status("401");
+            res.json({
+              mensagem:
+                "O email for informado já existe outro registro com o mesmo CPF",
+            });
+          } else {
+            for (let i in req.body) {
+              let objAlteracao = dados.contas[numConta - 1].usuario;
+
+              if (i == "nome") {
+                objAlteracao.nome = req.body[i];
+              } else if (i == "cpf") {
+                objAlteracao.cpf = req.body[i];
+              } else if (i == "data_nascimento") {
+                objAlteracao.data_nascimento = req.body[i];
+              } else if (i == "telefone") {
+                objAlteracao.telefone = req.body[i];
+              } else if (i == "email") {
+                objAlteracao.email = req.body[i];
+              } else if (i == "senha") {
+                objAlteracao.senha = req.body[i];
+              }
+            }
+          }
+        }
+      }
+
+      novoArquivo = JSON.stringify(dados, null, 2);
+      fs.writeFileSync(
+        "./src/bancodedados.js",
+        "module.exports = " + novoArquivo
+      );
+      res.status("201");
+      res.send({
+        mensagem: "Conta atualizada com sucesso!",
       });
     }
-
-    for (let i of dados.contas) {
-      if (i.usuario.cpf == dadosBody.cpf && i.numero != numConta) {
-        res.status("401");
-        res.json({
-          mensagem:
-            "O CPF for informado já existe outro registro com o mesmo CPF",
-        });
-      }
-    }
-
-    for (let i of dados.contas) {
-      if (i.usuario.email == dadosBody.email && i.numero != numConta) {
-        res.status("401");
-        res.json({
-          mensagem:
-            "O email for informado já existe outro registro com o mesmo CPF",
-        });
-      }
-    }
-
-    for (let i in req.body) {
-      let objAlteracao = dados.contas[numConta - 1].usuario;
-
-      if (i == "nome") {
-        objAlteracao.nome = req.body[i];
-      } else if (i == "cpf") {
-        objAlteracao.cpf = req.body[i];
-      } else if (i == "data_nascimento") {
-        objAlteracao.data_nascimento = req.body[i];
-      } else if (i == "telefone") {
-        objAlteracao.telefone = req.body[i];
-      } else if (i == "email") {
-        objAlteracao.email = req.body[i];
-      } else if (i == "senha") {
-        objAlteracao.senha = req.body[i];
-      }
-    }
-
-    novoArquivo = JSON.stringify(dados, null, 2);
-    fs.writeFileSync(
-      "./src/bancodedados.js",
-      "module.exports = " + novoArquivo
-    );
-    res.status("201");
-    res.send({
-      mensagem: "Conta atualizada com sucesso!",
-    });
   } catch (error) {
     res.status("401");
     res.json({
@@ -452,17 +458,18 @@ const saldo = async (req, res) => {
       res.json({
         mensagem: "O numero da conta é inválido",
       });
-    } else if (
-      !(
-        dados.contas[req.query.numero_conta - 1].usuario.senha ===
-        req.query.senha
-      )
-    ) {
-      res.status("400");
-      res.json({
-        mensagem: "Senha da conta incorreta",
-      });
     }
+    // else if (
+    //   !(
+    //     dados.contas[req.query.numero_conta - 1].usuario.senha ===
+    //     req.query.senha
+    //   )
+    // ) {
+    //   res.status("400");
+    //   res.json({
+    //     mensagem: "Senha da conta incorreta",
+    //   });
+    // }
 
     res.send({
       saldo: dados.contas[req.query.numero_conta - 1].saldo,
@@ -508,17 +515,18 @@ const extrato = async (req, res) => {
       res.json({
         mensagem: "O numero da conta é inválido",
       });
-    } else if (
-      !(
-        dados.contas[req.query.numero_conta - 1].usuario.senha ===
-        req.query.senha
-      )
-    ) {
-      res.status("400");
-      res.json({
-        mensagem: "Senha da conta incorreta",
-      });
     }
+    // else if (
+    //   !(
+    //     dados.contas[req.query.numero_conta - 1].usuario.senha ===
+    //     req.query.senha
+    //   )
+    // ) {
+    //   res.status("400");
+    //   res.json({
+    //     mensagem: "Senha da conta incorreta",
+    //   });
+    // }
 
     let dadosExtrato = {
       depositos: [],

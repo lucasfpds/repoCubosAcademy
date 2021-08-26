@@ -10,8 +10,8 @@ rotas.delete('/contas/:numeroConta', pedidos.cancelarConta)
 rotas.post('/transacoes/depositar', pedidos.depositar)
 rotas.post('/transacoes/sacar', pedidos.sacar)
 rotas.post('/transacoes/transferir', pedidos.transferir)
-rotas.get('/transacoes/saldo', pedidos.saldo)
-rotas.get('/transacoes/extrato', pedidos.extrato)
+rotas.get('/contas/saldo', pedidos.saldo)
+rotas.get('/contas/extrato', pedidos.extrato)
 
 
 

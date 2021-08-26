@@ -20,7 +20,7 @@
         "description": "",
         "parameters": [
           {
-            "name": "senha_banco",
+            "name": "senha",
             "in": "query",
             "type": "string"
           }
@@ -32,7 +32,7 @@
         "description": "",
         "parameters": [
           {
-            "name": "senha_banco",
+            "name": "senha",
             "in": "query",
             "type": "string"
           },
@@ -73,7 +73,7 @@
         "description": "",
         "parameters": [
           {
-            "name": "senha_banco",
+            "name": "senha",
             "in": "query",
             "type": "string"
           },
@@ -120,7 +120,7 @@
         "description": "",
         "parameters": [
           {
-            "name": "senha_banco",
+            "name": "senha",
             "in": "query",
             "type": "string"
           },
@@ -228,7 +228,7 @@
         "responses": {}
       }
     },
-    "/transacoes/saldo": {
+    "/contas/saldo": {
       "get": {
         "tags": [],
         "description": "",
@@ -247,7 +247,7 @@
         "responses": {}
       }
     },
-    "/transacoes/extrato": {
+    "/contas/extrato": {
       "get": {
         "tags": [],
         "description": "",

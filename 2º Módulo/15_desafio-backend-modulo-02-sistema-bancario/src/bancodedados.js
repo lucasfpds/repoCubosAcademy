@@ -10,17 +10,17 @@ module.exports = {
       "numero": "1",
       "saldo": 99300,
       "usuario": {
-        "nome": "Fernando",
-        "cpf": "46598765214",
+        "nome": "Lucas",
+        "cpf": "15678965489",
         "data": "2021-03-15",
         "telefone": "82985876548",
-        "email": "haad@bar.com",
+        "email": "tbar.com",
         "senha": "1234"
       }
     },
     {
       "numero": "2",
-      "saldo": 9600,
+      "saldo": 9900,
       "usuario": {
         "nome": "Lucas",
         "cpf": "89897553548",
@@ -58,6 +58,11 @@ module.exports = {
       "data": "2021-08-10 23:40:35",
       "numero_conta": "2",
       "valor": 50000
+    },
+    {
+      "data": "2021-08-10 23:40:35",
+      "numero_conta": "2",
+      "valor": 300
     }
   ],
   "transferencias": [
