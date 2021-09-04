@@ -2,6 +2,7 @@ SELECT compositor, id FROM musicas;
 SELECT composicao, tempo id FROM musicas WHERE tempo/60 > 4;
 SELECT composicao, compositor, id FROM musicas WHERE id BETWEEN 47 AND 123;
 SELECT * FROM musicas WHERE compositor is not NULL AND tempo/60 < 5 AND compositor != 'Bach';
+
 SELECT composicao, tempo FROM musicas WHERE compositor = 'Mozart' OR compositor = 'Bach';
 SELECT * FROM musicas ORDER BY id DESC;
 SELECT * FROM musicas ORDER BY tempo DESC;
