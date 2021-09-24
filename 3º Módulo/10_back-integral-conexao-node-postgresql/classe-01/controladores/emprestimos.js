@@ -78,9 +78,9 @@ const atualizarEmprestimo = async (req, res) => {
 const excluirEmprestimo = async (req, res) => {
   const {id} = req.params
   try {    
-    const Emprestimo = await conexao.query("select * from emprestimos where id = $1", [id]);
+    const emprestimo = await conexao.query("select * from emprestimos where id = $1", [id]);
     
-    if(Emprestimo.rowCount === 0){
+    if(emprestimo.rowCount === 0){
       res.status(404).json('Nenhum Emprestimo foi encontrado');
     }
 
