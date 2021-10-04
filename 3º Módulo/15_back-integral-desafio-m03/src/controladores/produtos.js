@@ -92,7 +92,7 @@ const registerProduct = async (req, res) => {
 const updateProduct = async (req, res) => {
     const {nome, quantidade, categoria, preco, descricao, imagem} = req.body;
     const {usuario} = req
-    const id = Number(req.params.id)
+    const {id} = req.params
     
     try {   
         

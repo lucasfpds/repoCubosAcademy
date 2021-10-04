@@ -33,12 +33,11 @@ const userLogin = async (req, res) => {
             }
             
         
-        const token = jwt.sign({id: userFound.rows[0].id}, segredo, {expiresIn: '59m'});
+        const token = await jwt.sign({id: userFound.rows[0].id}, segredo, {expiresIn: '6h'});
 
-        const { senha: senhaUsuario, ...dadosUsuarios } = userFound.rows[0];
-        return res.status(200).json({
-            "token ": token
-        });
+        // console.log(res.body)
+        return res.status(201).json({ token });
+        return res.status(200).json(res.body);
 
     } catch (error) {
        showError(error, res);        

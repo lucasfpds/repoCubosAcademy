@@ -11,7 +11,7 @@ rotas.use("/docs", swaggerUi.serve, swaggerUi.setup(require("../swagger.json")))
 
 
 // CADASTRAR USUARIO
-rotas.post("/usuarios", usuarios.registerUser);
+rotas.post("/usuario", usuarios.registerUser);
 
 // LOGIN DO USUARIO
 rotas.post("/login", login.userLogin);
@@ -20,8 +20,8 @@ rotas.post("/login", login.userLogin);
 rotas.use(verificaLogin)
 
 // PERFIL DO USUARIO
-rotas.get("/usuarios", usuarios.userData);
-rotas.put("/usuarios", usuarios.updateUser);
+rotas.get("/usuario", usuarios.userData);
+rotas.put("/usuario", usuarios.updateUser);
 
 //PRODUTOS
 rotas.post("/produtos", produtos.registerProduct);

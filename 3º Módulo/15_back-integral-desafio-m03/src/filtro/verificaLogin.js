@@ -29,7 +29,7 @@ const verificaLogin = async (req, res, next) => {
 
         next();
     } catch (error) {
-        if(error.message.includes('invalid') || error.message.includes('Unexpected token') || error.message.includes('expired')){
+        if(error.message.includes('invalid') || error.message.includes('jwt')  || error.message.includes('Unexpected token') || error.message.includes('expired')){
             return executionResponse(401,"Para acessar este recurso um token de autenticação válido deve ser enviado.",res)
         }
         showError(error, res);
