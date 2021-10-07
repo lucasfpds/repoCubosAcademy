@@ -31,8 +31,7 @@ const findUser = async (email) => {
 
 const registerUser = async (req, res) => {
     const {nome,email,senha,nome_loja} = req.body;
-    const {authorization} = req.headers
-    console.log(authorization)
+    
     try {
         
         if(!nome || !email || !senha || !nome_loja){
