@@ -35,9 +35,7 @@ const userLogin = async (req, res) => {
         
         const token = await jwt.sign({id: userFound.rows[0].id}, segredo, {expiresIn: '6h'});
 
-        // console.log(res.body)
         return res.status(201).json({ token });
-        return res.status(200).json(res.body);
 
     } catch (error) {
        showError(error, res);        
