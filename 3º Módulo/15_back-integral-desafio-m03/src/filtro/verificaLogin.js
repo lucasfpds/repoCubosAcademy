@@ -1,7 +1,7 @@
 const conexao = require("../conexao");
 const jwt = require('jsonwebtoken');
 const segredo = require('../segredo');
-const functions = require('../controladores/usuarios');
+const functions = require('../controladores/usuario');
 
 const verificaLogin = async (req, res, next) => {
     

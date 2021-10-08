@@ -21,7 +21,6 @@ function ButtonFilter(props) {
   useEffect(()=>{
     setIcon("+")
     setClickedButton("")
-    console.log('limpar')
   },[clear])
 
   return (

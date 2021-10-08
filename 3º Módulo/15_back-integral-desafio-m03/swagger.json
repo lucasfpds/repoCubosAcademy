@@ -22,7 +22,7 @@
   "consumes": [],
   "produces": [],
   "paths": {
-    "/usuarios": {
+    "/usuario": {
       "post": {
         "tags": [],
         "description": "Cadastrar Usuarios",
