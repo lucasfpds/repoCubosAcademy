@@ -20,7 +20,7 @@ function App() {
   ////////////////////////
   async function listDocuments(){  
     try {
-    const api = await fetch(`https://dindin-api-desafioback.herokuapp.com/transactions`, {
+    const api = await fetch(`http://localhost:3333/transactions`, {
       method: 'GET'
     });
     const data = await api.json()
@@ -43,11 +43,11 @@ async function handleRegisterDocument(body, method, id) {
     let url = '';
     
     if (method === "PUT"){
-      url = `https://dindin-api-desafioback.herokuapp.com/transactions/${idDocument}`
+      url = `http://localhost:3333/transactions/${idDocument}`
     } else if (method === "POST") {
-      url = `https://dindin-api-desafioback.herokuapp.com/transactions/`
+      url = `http://localhost:3333/transactions`
     } else if (method === "DELETE") {
-      url = `https://dindin-api-desafioback.herokuapp.com/transactions/${Number(id)}`
+      url = `http://localhost:3333/transactions/${id}`
     } else {
       return
     }
@@ -60,8 +60,7 @@ async function handleRegisterDocument(body, method, id) {
         },
         body: JSON.stringify(body),
           });
-        const data = await response.json();
-        console.log(data)
+        await response.json();
     } else {
       await fetch(url, {
         method: method
@@ -89,9 +88,9 @@ async function handleRegisterDocument(body, method, id) {
   function openModal(param, id){
     setIdDocument(id)
     if(param === 'add'){
-      setModal('')
+      setModal('openModal')
     } else {
-      setModalEdit('')
+      setModalEdit('openModal')
     }
   }
 
@@ -115,7 +114,7 @@ async function handleRegisterDocument(body, method, id) {
 
     try {
       
-      const api = await fetch(`https://dindin-api-desafioback.herokuapp.com/transactions`, {
+      const api = await fetch(`http://localhost:3333/transactions`, {
       method: 'GET'
       });
       const data = await api.json()
@@ -163,8 +162,6 @@ async function handleRegisterDocument(body, method, id) {
         })
         newDocuments = arr
       }
-
-
       setDocumentsArr(newDocuments)
 
     } catch (error) {
@@ -181,8 +178,6 @@ async function handleRegisterDocument(body, method, id) {
   const categories = [];
 
   documents.map(e => categories.indexOf(e.category)<0 && categories.push(e.category))
-  
-
   
   //////////////////////////////////
   
