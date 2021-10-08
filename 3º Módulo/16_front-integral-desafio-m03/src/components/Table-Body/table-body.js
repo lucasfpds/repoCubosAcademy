@@ -15,7 +15,10 @@ function transformDate(date){
         console.log(error)
     }
 }
-
+function handleDelete(param1, param2, param3){
+    handleRegisterDocument(param1, param2, param3);
+    setHidden('hidden')
+}
 function handleShowDelete() {
     setHidden('')
 }
@@ -38,7 +41,7 @@ function handleShowDelete() {
                     <div className={`container-confirm-delete ${hidden}`}>
                         <p>Apagar item?</p>
                         <div>
-                            <button onClick={()=>handleRegisterDocument('', 'DELETE', document.id)} className={`btn-actions-confirm-delete`}>
+                            <button onClick={()=>handleDelete('', 'DELETE', document.id)} className={`btn-actions-confirm-delete`}>
                                 Sim
                             </button>
                             <button onClick={() => setHidden('hidden')} className={`btn-actions-cancel-delete`}>

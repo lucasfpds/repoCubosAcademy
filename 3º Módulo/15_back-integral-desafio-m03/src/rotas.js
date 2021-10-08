@@ -1,17 +1,16 @@
 const express = require("express");
-const usuarios = require("./controladores/usuarios");
+const usuario = require("./controladores/usuario");
 const login = require("./controladores/login");
 const verificaLogin = require("./filtro/verificaLogin");
 const produtos = require('./controladores/produtos');
 const swaggerUi = require('swagger-ui-express');
-// const verificaLogin = require('./filtros/verificaLogin');
 
 const rotas = express();
 rotas.use("/docs", swaggerUi.serve, swaggerUi.setup(require("../swagger.json")))
 
 
 // CADASTRAR USUARIO
-rotas.post("/usuario", usuarios.registerUser);
+rotas.post("/usuario", usuario.registerUser);
 
 // LOGIN DO USUARIO
 rotas.post("/login", login.userLogin);
@@ -20,8 +19,8 @@ rotas.post("/login", login.userLogin);
 rotas.use(verificaLogin)
 
 // PERFIL DO USUARIO
-rotas.get("/usuario", usuarios.userData);
-rotas.put("/usuario", usuarios.updateUser);
+rotas.get("/usuario", usuario.userData);
+rotas.put("/usuario", usuario.updateUser);
 
 //PRODUTOS
 rotas.post("/produtos", produtos.registerProduct);

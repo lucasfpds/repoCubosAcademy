@@ -4,11 +4,13 @@ import './aside.css'
 function Aside (props) {
 const {documents, openModal} = props;
 
+// eslint-disable-next-line react-hooks/exhaustive-deps
 const credit = []
+// eslint-disable-next-line react-hooks/exhaustive-deps
 const debit = []
 
 documents.map(e => {
-  e.type === 'credit' ? credit.push(e) : debit.push(e);
+  return e.type === 'credit' ? credit.push(e) : debit.push(e);
 })
 
 const [creditValue, setCreditValue] = useState(0)

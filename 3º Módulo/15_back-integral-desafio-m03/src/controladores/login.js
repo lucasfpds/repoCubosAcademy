@@ -2,7 +2,7 @@
 const bcrypt = require("bcrypt");
 const jwt = require('jsonwebtoken');
 const segredo = require('../segredo');
-const functions = require('./usuarios');
+const functions = require('./usuario');
 
 
 

@@ -20,7 +20,7 @@ function App() {
   ////////////////////////
   async function listDocuments(){  
     try {
-    const api = await fetch(`http://localhost:3333/transactions`, {
+    const api = await fetch(`https://dindin-api-desafioback.herokuapp.com/transactions`, {
       method: 'GET'
     });
     const data = await api.json()
@@ -43,11 +43,11 @@ async function handleRegisterDocument(body, method, id) {
     let url = '';
     
     if (method === "PUT"){
-      url = `http://localhost:3333/transactions/${idDocument}`
+      url = `https://dindin-api-desafioback.herokuapp.com/transactions/${idDocument}`
     } else if (method === "POST") {
-      url = `http://localhost:3333/transactions`
+      url = `https://dindin-api-desafioback.herokuapp.com/transactions/`
     } else if (method === "DELETE") {
-      url = `http://localhost:3333/transactions/${id}`
+      url = `https://dindin-api-desafioback.herokuapp.com/transactions/${Number(id)}`
     } else {
       return
     }
@@ -60,7 +60,8 @@ async function handleRegisterDocument(body, method, id) {
         },
         body: JSON.stringify(body),
           });
-        await response.json();
+        const data = await response.json();
+        console.log(data)
     } else {
       await fetch(url, {
         method: method
@@ -114,7 +115,7 @@ async function handleRegisterDocument(body, method, id) {
 
     try {
       
-      const api = await fetch(`http://localhost:3333/transactions`, {
+      const api = await fetch(`https://dindin-api-desafioback.herokuapp.com/transactions`, {
       method: 'GET'
       });
       const data = await api.json()
