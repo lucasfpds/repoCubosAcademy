@@ -16,6 +16,7 @@ function App() {
   const [modal, setModal] = useState('hidden');
   const [arrFilters, setArrFilters] = useState([]);
 
+  const [docCat, setdocCat] = useState([])
 
   ////////////////////////
   async function listDocuments(){  
@@ -26,6 +27,7 @@ function App() {
     const data = await api.json()
     setDocumentsArr(data)
     setArrFilters(data)
+    setdocCat(data)
     } catch (error) {
       console.log(error)
     }
@@ -172,12 +174,9 @@ async function handleRegisterDocument(body, method, id) {
 
   //////////////////////////////////
 
-
-  // const [categories, setCategories] = useState([])
-
   const categories = [];
 
-  documents.map(e => categories.indexOf(e.category)<0 && categories.push(e.category))
+  docCat.map(e => categories.indexOf(e.category)<0 && categories.push(e.category))
   
   //////////////////////////////////
   

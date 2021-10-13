@@ -2,8 +2,6 @@ import './filter.css';
 import iconFilter from '../../images/icons8-filtro-481.svg';
 import { useState } from 'react';
 import ButtonFilter from '../Button Filter/button-filter';
-import ButtonFilterCategory from '../Button Filter/button-filter-category';
-
 
 
 function Filter(props){
@@ -21,7 +19,6 @@ const { applyFilters, categories} = props;
     const [categoryFilter, setCategoryFilter]=useState([])
 
     const [clear, setClear] =useState(false)
-    const [clearCat, setClearCat] =useState(false)
 
     function handleAplyFilters(clear) {
         if(!clear){
@@ -43,11 +40,6 @@ const { applyFilters, categories} = props;
             }
             applyFilters(objFilter)
         }
-
-        
-        setCategoryFilter([])
-        
-        clearCat ? setClearCat(false) : setClearCat(true)
     }
 
 
@@ -105,7 +97,7 @@ return(
 
                 <p>Categorias</p>
                 <div >
-                    {categories.map((e, index) => <ButtonFilterCategory clearCat={clearCat} clear={clear} type={"category"}  id={index} handleDay={e=>handleDay(e)} text={e}/>)}
+                    {categories.map((e, index) => <ButtonFilter clear={clear} type={"category"}  id={index} handleDay={e=>handleDay(e)} text={e}/>)}
                 </div>
 
             </div>
@@ -114,10 +106,10 @@ return(
                 <p>Valor</p>
 
                 <label htmlFor="min-value" >Min </label>
-                <input onChange={e=>setMinValue(e.target.value)} value={minValue>0?minValue:''} id="min-value" type="number" placeholder="Ex: 50,00"/>
+                <input onChange={e=>setMinValue(e.target.value)} value={minValue>0?minValue:''} id="min-value" type="number" placeholder="Ex:50,00"/>
 
                 <label htmlFor="max-value">Max</label>
-                <input onChange={e=>setMaxValue(e.target.value)} value={maxValue>0?maxValue:''} id="max-value" type="number" placeholder="Ex: 50,00"/>
+                <input onChange={e=>setMaxValue(e.target.value)} value={maxValue>0?maxValue:''} id="max-value" type="number" placeholder="Ex:50,00"/>
 
 
             </div>
