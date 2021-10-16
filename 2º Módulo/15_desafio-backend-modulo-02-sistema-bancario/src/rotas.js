@@ -1,20 +1,18 @@
 const express = require('express');
-const pedidos = require('../controladores/pedidos')
+const contas = require('./controladores/contas');
+const transacoes = require('./controladores/transacoes');
 
 const rotas = express();
 
-rotas.get('/contas', pedidos.consultar)
-rotas.post('/contas', pedidos.criarConta)
-rotas.put('/contas/:numeroConta/usuario', pedidos.alterarConta)
-rotas.delete('/contas/:numeroConta', pedidos.cancelarConta)
-rotas.post('/transacoes/depositar', pedidos.depositar)
-rotas.post('/transacoes/sacar', pedidos.sacar)
-rotas.post('/transacoes/transferir', pedidos.transferir)
-rotas.get('/contas/saldo', pedidos.saldo)
-rotas.get('/contas/extrato', pedidos.extrato)
+rotas.post('/contas', contas.criarConta);
+rotas.get('/contas', contas.listarContas);
+rotas.put('/contas/:numeroConta/usuario', contas.atualizarUsuarioConta);
+rotas.delete('/contas/:numeroConta', contas.excluirConta);
+rotas.get('/contas/saldo', transacoes.saldo);
+rotas.get('/contas/extrato', transacoes.extrato);
 
+rotas.post('/transacoes/depositar', transacoes.depositar);
+rotas.post('/transacoes/sacar', transacoes.sacar);
+rotas.post('/transacoes/transferir', transacoes.transferir);
 
-
-module.exports = {
-    rotas
-}
+module.exports = rotas;
