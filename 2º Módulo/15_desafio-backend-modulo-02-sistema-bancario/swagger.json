@@ -15,27 +15,10 @@
   "produces": [],
   "paths": {
     "/contas": {
-      "get": {
-        "tags": [],
-        "description": "",
-        "parameters": [
-          {
-            "name": "senha",
-            "in": "query",
-            "type": "string"
-          }
-        ],
-        "responses": {}
-      },
       "post": {
         "tags": [],
         "description": "",
         "parameters": [
-          {
-            "name": "senha",
-            "in": "query",
-            "type": "string"
-          },
           {
             "name": "obj",
             "in": "body",
@@ -64,7 +47,30 @@
             }
           }
         ],
-        "responses": {}
+        "responses": {
+          "201": {
+            "description": "Created"
+          },
+          "400": {
+            "description": "Bad Request"
+          }
+        }
+      },
+      "get": {
+        "tags": [],
+        "description": "",
+        "parameters": [
+          {
+            "name": "senha_banco",
+            "in": "query",
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "400": {
+            "description": "Bad Request"
+          }
+        }
       }
     },
     "/contas/{numeroConta}/usuario": {
@@ -73,11 +79,6 @@
         "description": "",
         "parameters": [
           {
-            "name": "senha",
-            "in": "query",
-            "type": "string"
-          },
-          {
             "name": "numeroConta",
             "in": "path",
             "required": true,
@@ -111,7 +112,17 @@
             }
           }
         ],
-        "responses": {}
+        "responses": {
+          "204": {
+            "description": "No Content"
+          },
+          "400": {
+            "description": "Bad Request"
+          },
+          "404": {
+            "description": "Not Found"
+          }
+        }
       }
     },
     "/contas/{numeroConta}": {
@@ -120,112 +131,23 @@
         "description": "",
         "parameters": [
           {
-            "name": "senha",
-            "in": "query",
-            "type": "string"
-          },
-          {
             "name": "numeroConta",
             "in": "path",
             "required": true,
             "type": "string"
           }
         ],
-        "responses": {}
-      }
-    },
-    "/transacoes/depositar": {
-      "post": {
-        "tags": [],
-        "description": "",
-        "parameters": [
-          {
-            "name": "obj",
-            "in": "body",
-            "schema": {
-              "type": "object",
-              "properties": {
-                "data": {
-                  "example": "any"
-                },
-                "numero_conta": {
-                  "example": "any"
-                },
-                "valor": {
-                  "example": 50
-                }
-              }
-            }
-          }
-        ],
-        "responses": {}
-      }
-    },
-    "/transacoes/sacar": {
-      "post": {
-        "tags": [],
-        "description": "",
-        "parameters": [
-          {
-            "name": "senha_conta",
-            "in": "query",
-            "type": "string"
+        "responses": {
+          "204": {
+            "description": "No Content"
           },
-          {
-            "name": "obj",
-            "in": "body",
-            "schema": {
-              "type": "object",
-              "properties": {
-                "data": {
-                  "example": "any"
-                },
-                "numero_conta": {
-                  "example": "any"
-                },
-                "valor": {
-                  "example": 50
-                }
-              }
-            }
-          }
-        ],
-        "responses": {}
-      }
-    },
-    "/transacoes/transferir": {
-      "post": {
-        "tags": [],
-        "description": "",
-        "parameters": [
-          {
-            "name": "senha_conta",
-            "in": "query",
-            "type": "string"
+          "403": {
+            "description": "Forbidden"
           },
-          {
-            "name": "obj",
-            "in": "body",
-            "schema": {
-              "type": "object",
-              "properties": {
-                "data": {
-                  "example": "any"
-                },
-                "numero_conta_origem": {
-                  "example": "any"
-                },
-                "numero_conta_destino": {
-                  "example": "any"
-                },
-                "valor": {
-                  "example": "any"
-                }
-              }
-            }
+          "404": {
+            "description": "Not Found"
           }
-        ],
-        "responses": {}
+        }
       }
     },
     "/contas/saldo": {
@@ -244,7 +166,14 @@
             "type": "string"
           }
         ],
-        "responses": {}
+        "responses": {
+          "400": {
+            "description": "Bad Request"
+          },
+          "404": {
+            "description": "Not Found"
+          }
+        }
       }
     },
     "/contas/extrato": {
@@ -263,7 +192,131 @@
             "type": "string"
           }
         ],
-        "responses": {}
+        "responses": {
+          "400": {
+            "description": "Bad Request"
+          },
+          "404": {
+            "description": "Not Found"
+          }
+        }
+      }
+    },
+    "/transacoes/depositar": {
+      "post": {
+        "tags": [],
+        "description": "",
+        "parameters": [
+          {
+            "name": "obj",
+            "in": "body",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "numero_conta": {
+                  "example": "any"
+                },
+                "valor": {
+                  "example": "any"
+                }
+              }
+            }
+          }
+        ],
+        "responses": {
+          "201": {
+            "description": "Created"
+          },
+          "400": {
+            "description": "Bad Request"
+          },
+          "404": {
+            "description": "Not Found"
+          }
+        }
+      }
+    },
+    "/transacoes/sacar": {
+      "post": {
+        "tags": [],
+        "description": "",
+        "parameters": [
+          {
+            "name": "obj",
+            "in": "body",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "numero_conta": {
+                  "example": "any"
+                },
+                "valor": {
+                  "example": "any"
+                },
+                "senha": {
+                  "example": "any"
+                }
+              }
+            }
+          }
+        ],
+        "responses": {
+          "201": {
+            "description": "Created"
+          },
+          "400": {
+            "description": "Bad Request"
+          },
+          "403": {
+            "description": "Forbidden"
+          },
+          "404": {
+            "description": "Not Found"
+          }
+        }
+      }
+    },
+    "/transacoes/transferir": {
+      "post": {
+        "tags": [],
+        "description": "",
+        "parameters": [
+          {
+            "name": "obj",
+            "in": "body",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "numero_conta_origem": {
+                  "example": "any"
+                },
+                "numero_conta_destino": {
+                  "example": "any"
+                },
+                "valor": {
+                  "example": "any"
+                },
+                "senha": {
+                  "example": "any"
+                }
+              }
+            }
+          }
+        ],
+        "responses": {
+          "201": {
+            "description": "Created"
+          },
+          "400": {
+            "description": "Bad Request"
+          },
+          "403": {
+            "description": "Forbidden"
+          },
+          "404": {
+            "description": "Not Found"
+          }
+        }
       }
     }
   },
